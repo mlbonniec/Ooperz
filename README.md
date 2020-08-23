@@ -1,5 +1,7 @@
+<br />
+
 <p align="center">
-	<img width="300px" src="https://raw.githubusercontent.com/mlbonniec/ooperz/master/images/logo.svg" />
+	<img width="400px" src="https://raw.githubusercontent.com/mlbonniec/ooperz/master/images/logo.svg" />
 	<p align="center">A high-tech news site created with NodeJS and NextJS.</p>
 </p>
 <p align="center">
