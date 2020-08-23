@@ -2,11 +2,11 @@
   "name": "ooperz-api",
   "version": "1.0.0",
   "description": "Ooperz website API",
-  "main": "./main.js",
+  "main": "./src/index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node .",
-    "build": "rm -rf ./build && babel -d ./build . -s --ignore \"node_modules/**/*.js\"",
-    "prod": "NODE_ENV=production node ./build/app.js"
+    "build": "babel ./src --out-dir ./dist --copy-files",
+    "prod": "NODE_ENV=production node ./dist/index.js"
   },
   "repository": {
     "type": "git",
