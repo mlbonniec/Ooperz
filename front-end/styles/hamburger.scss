@@ -1,0 +1,61 @@
+@import './variables';
+
+#hamburger-button {
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+
+    &:hover {opacity: 0.7;}
+    &.is-active {
+        &:hover {opacity: 0.7;}
+        .hamburger-inner {
+            background-color: #000;
+            transition-delay: .22s;
+            background-color: transparent !important;
+
+            &::before, &::after {background-color: #000;}
+            &::before {top: 0; transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); transform: translate3d(0, 10px, 0) rotate(45deg);}
+            &::after {top: 0; transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1); transform: translate3d(0, 10px, 0) rotate(-45deg);}
+        }
+    }
+
+    .hamburger-box {width: 30px; height: 20px; display: inline-block; position: relative;}
+    .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px;
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        border-radius: 3px;
+        position: absolute;
+        transition-property: transform;
+        transition-duration: 0.15s;
+        transition-timing-function: ease;
+        top: 2px;
+        transition: background-color 0s 0.13s linear;
+
+        &::before, &::after {width: 30px; height: 3px; background-color: #000; border-radius: 3px; position: absolute; transition-property: transform; transition-duration: 0.15s; transition-timing-function: ease;}
+        &::before, &::after {content: ''; display: block;}
+        &::before {top: 8px; transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);}
+        &::after {top: 16px; transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);}
+    }
+}
+
+body[dark-theme] {
+    #hamburger-button {
+        &.is-active .hamburger-inner, .hamburger-inner {
+            background-color: map-get($dark-theme, "white");
+            &::before, &::after {background-color: map-get($dark-theme, "white");}
+        }
+    }
+}

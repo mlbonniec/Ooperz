@@ -1,0 +1,137 @@
+@import './variables';
+
+/* -== Recent ==- */
+#home {
+    margin-top: 2.5rem;
+    color: map-get($light-theme, "dark-blue");
+
+    .calendar {
+        flex: 3;
+        color: inherit;
+
+        .time {
+            font-size: 5rem;
+            font-weight: normal;
+            color: inherit;
+        }
+
+        .today {
+            font-weight: normal;
+            text-transform: capitalize;
+            color: inherit;
+        }
+
+        @media screen and (max-width: 700px) {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+    }
+    
+    .recent-news {
+        flex: 4;
+        width: 100%;
+        
+        .card {margin: 0 .25rem;}
+    
+        .flickity-viewport {border-radius: .5rem;}
+        .flickity-prev-next-button {
+            background-color: map-get($light-theme, "dark-blue");
+            color: map-get($light-theme, "white");
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+        margin-bottom: 2.5rem;
+    }
+}
+  
+/* -== Categories ==- */  
+#sections-wrapper {
+    background-color: map-get($light-theme, "dark-blue");
+
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    .title {color: map-get($light-theme, "white");}
+
+    @media screen and (max-width: 700px) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #popular {
+        color: map-get($light-theme, "gray");
+    
+        header {
+            .carousel-cell {margin: 0 1rem;}
+            .title {margin-right: 1rem; color: map-get($light-theme, "white");}
+    
+            .categories {
+                flex: 1;
+    
+                .slider {
+                    flex: 1;
+                    padding: 0 30px;
+                    font-size: .95rem;
+    
+                    .placeholder {margin: 0 .25rem;}
+    
+                    .flickity-prev-next-button {
+                        background: transparent;
+                        color: map-get($light-theme, "gray");
+    
+                        &.next {right: 0px !important;}
+                        &.previous {left: 0px !important;}
+                    }
+                }
+            }
+    
+            @media screen and (max-width: 700px) {
+                flex-direction: column;
+                align-items: initial;
+                margin-bottom: 1rem;
+    
+                .title {margin-bottom: .5rem;}
+        
+                .categories {
+                    .slider {padding: 0;}
+                }
+            }
+        }
+            
+        .categories-news {
+            .flickity-viewport {border-radius: .5rem;}
+    
+            .card {
+                width: 220px;
+                height: 280px;
+                margin: 0 .25rem;
+            
+                &:first-child {margin-left: 0;}
+                &:last-child {margin-right: 0;}
+            }
+        }
+    }
+    
+    #pinned {}
+}
+
+/* -== Dark Theme ==- */
+body[dark-theme] {
+    #home {
+        color: map-get($dark-theme, "white");
+
+        .recent-news .flickity-prev-next-button {
+            background-color: map-get($dark-theme, "gray");
+            color: map-get($dark-theme, "deep-black");
+        }
+    }
+
+    #sections-wrapper {
+        background-color: map-get($dark-theme, "deep-black");
+    }
+}

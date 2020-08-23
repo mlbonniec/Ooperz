@@ -1,0 +1,52 @@
+{
+  "name": "ooperz-api",
+  "version": "1.0.0",
+  "description": "Ooperz website API",
+  "main": "./main.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node .",
+    "build": "rm -rf ./build && babel -d ./build . -s --ignore \"node_modules/**/*.js\"",
+    "prod": "NODE_ENV=production node ./build/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlbonniec/ooperz.git"
+  },
+  "keywords": [
+    "ooperz",
+    "website",
+    "api",
+    "mongo",
+    "mongodb",
+    "mongoose",
+    "nosql",
+    "actualities"
+  ],
+  "author": "Mathis Le Bonniec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlbonniec/ooperz/issues"
+  },
+  "homepage": "https://github.com/mlbonniec/ooperz#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "helmet": "^3.22.0",
+    "mongoose": "^5.9.15",
+    "nanoid": "^3.1.9",
+    "request-ip": "^2.1.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/runtime": "^7.9.6",
+    "nodemon": "^2.0.4"
+  }
+}

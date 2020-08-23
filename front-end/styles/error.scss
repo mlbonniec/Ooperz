@@ -1,0 +1,94 @@
+@import './variables';
+
+$primary-fill: #111d4a;
+$secondary-fill: rgba(0, 0, 0, .15);
+
+#ghost {
+    &.reveal {
+        .ghost-container {
+            &:first-child {transform: translateX(35%) scale(.7);}
+            &:last-child {transform: translate(-35%, -5%) scale(.8);}
+        }
+    }
+
+    .ghost-container {
+        cursor: pointer;
+        z-index: 2;
+        
+        &:first-child {
+            transform: translateX(50%) scale(.75);
+            transition: transform 1s ease-in-out;
+            z-index: 1;
+
+            .ghost {animation-delay: 3s;}
+        }
+    
+        &:last-child {
+            transform: translateX(-50%) scale(.75);
+            transition: transform 1s ease-in-out;
+            z-index: 1;
+
+            .ghost {animation-delay: 3s;}
+        }
+
+        .ghost {
+            animation: ghostFloat 3.5s ease-out infinite;
+    
+            .primary-fill {fill: $primary-fill;}
+            .secondary-fill {fill: $secondary-fill}
+        }
+    
+        .shadow-container {
+            margin-top: 1rem;
+    
+            .shadow {
+                animation: shadowShrink 3.5s ease-out infinite;
+                transform-origin: center center;
+                margin: auto;
+                
+                ellipse {
+                    fill: rgba(0, 0, 0, .1);
+                    transform-origin: center center;
+                }
+            }
+        }
+    }
+}
+
+#error {
+    .error-name {font-size: 2rem;}
+    .error-info {font-size: 1.1rem;}
+
+    button, .button-container {width: 100%;}
+    button {
+        background-color: transparent;
+        border-radius: 1.625rem;
+        text-transform: uppercase;
+        padding: .75rem 1.35rem;
+        color: map-get($light-theme, "dark-blue");
+        border: 2px solid map-get($light-theme, "dark-blue");
+
+        i {
+            animation: arrowFloat 3.5s ease-in-out infinite;
+            transition: .25s margin ease-in-out, .3s transform ease-in-out;
+            margin-right: 1.35rem;
+            color: map-get($light-theme, "dark-blue");
+        }
+
+        p {width: 100%;}
+    }
+}
+
+@keyframes arrowFloat {
+    50% {transform: translateX(5px);}
+}
+
+@keyframes ghostFloat {
+    50% {transform: translate(0, 20px);}
+}
+
+@keyframes shadowShrink {
+    0% {width: 90%;}
+    50% {width: 60%;}
+    100% {width: 90%;}
+}

@@ -1,0 +1,48 @@
+@import './variables';
+
+#main-search-container {
+    flex: 1;
+}
+
+#search {
+    padding-top: 2.5rem;
+
+    h1 {
+        font-family: "SF Pro Rounded";
+        font-weight: bold;
+        letter-spacing: .75px;
+        font-size: 2rem;
+
+        text-shadow: 25px -25px 0 rgba(15, 8, 75, .1);
+    }
+
+    input[type=text] {
+        width: 100%;
+        font-size: 1.5rem;
+        background-color: rgba(228, 233, 237, 0.75);
+
+        padding: .75rem;
+        border-radius: 10px;
+        border: none;
+    }
+}
+
+#search-results {
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    flex: 1;
+
+    background-color: map-get($light-theme, "dark-blue");
+
+    h1 {color: map-get($light-theme, "white")}
+    
+    .card-item-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        grid-gap: 10px;
+
+        .card {width: auto;}
+    }
+}

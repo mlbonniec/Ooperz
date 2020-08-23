@@ -1,0 +1,23 @@
+// Light theme
+$light-theme: (
+    "white": #f5f7fa,
+    "dark-blue": #0f084b,
+    "indigo": #647acb,
+    "light-blue": #bed0f7,
+    "gray": #898c9f
+);
+
+
+// Dark theme
+$dark-theme: (
+    "white": #f5f7fa,
+    "deep-black": #151515,
+    "light-black": #262626,
+    "gray": #3a3a3c,
+    "light-gray": #aaa
+    // "light-gray": #898c9f
+);
+
+// Placeholder
+$placeholder-base: #cccccc;
+$placeholder-highlight: lighten($placeholder-base, 5%);

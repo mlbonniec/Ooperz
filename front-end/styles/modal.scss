@@ -1,0 +1,56 @@
+@import './variables';
+
+#modal {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    justify-content: center;
+    animation: background-in .3s ease-in-out normal;
+        
+    &.background-out {animation: background-out .3s ease-in-out normal;}
+
+    .content {
+        position: relative;
+        animation: popup-in .3s ease-in-out normal;
+        
+        &.popup-out {animation: popup-out .3s ease-in-out normal;}
+
+        .close {
+            background: map-get($light-theme, "white");
+            padding: .75rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(25%, -25%);
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes background-in {
+    from {background-color: rgba(0, 0, 0, .0);}
+    to {background-color: rgba(0, 0, 0, .5);}
+}
+
+@keyframes background-out {
+    from {background-color: rgba(0, 0, 0, .5);}
+    to {background-color: rgba(0, 0, 0, .0);}
+}
+
+@keyframes popup-in {
+    from {opacity: 0; transform: scale(.75);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes popup-out {
+    from {opacity: 1; transform: scale(1);}
+    to {opacity: 0; transform: scale(.75);}
+}

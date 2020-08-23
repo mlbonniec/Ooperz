@@ -1,0 +1,258 @@
+@import './variables';
+
+$markdown-color: rgba(228, 233, 237, 0.75);
+
+#main-article-container {
+    padding-top: .75rem;
+}
+
+#article-heading {
+    margin-bottom: 1rem;
+
+    .title, .intro, .date, .line-separator {visibility: hidden;}
+
+    .cover-image {
+        width: 100%;
+        height: 250px;
+        
+        object-fit: cover;
+        object-position: center;
+        
+        color: transparent;
+        box-shadow: 0 0 10px rgb(190, 208, 227);
+    
+        &::before {display: none;} // Alt text
+    }
+
+    .title {
+        font-size: 1.85rem;
+        color: map-get($light-theme, "indigo");
+        font-family: 'SF Pro Rounded';
+        font-weight: 200;
+        letter-spacing: .05rem;
+        line-height: 1.25;
+    }
+
+    .intro {
+        text-align: justify;
+        line-height: 1.5;
+        font-size: 1.15rem;
+        margin-bottom: .5rem;
+    }
+
+    .date {color: rgba(0, 0, 0, .75); font-size: .75rem;}
+    .line-separator {width: 75px; margin-top: 1rem;}
+}
+
+#article-content {
+    visibility: hidden;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+
+    hr {margin: 1.5rem 0;}
+    p, table, pre, ol, ul, blockquote {margin-bottom: 1.25rem;}
+    strong {
+        color: map-get($light-theme, "indigo");
+        font-weight: normal;
+        font-family: 'SF Pro Rounded';
+        font-weight: 200;
+        letter-spacing: .25px;
+    }
+
+    ol, ul {
+        padding-left: 2rem;
+    
+        li + li, li ul, li ol {margin-top: .25em; visibility: visible;}
+    }
+    ol {list-style-type: decimal;}
+    ul {list-style-type: disc;}
+
+    h1, h2, h3, h4, h5, h6 {
+        color: map-get($light-theme, "indigo");
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-family: 'SF Pro Rounded';
+        font-weight: 200;
+    }
+
+    h1 {font-size: 2rem;}
+    h2 {font-size: 1.5rem;}
+    h3 {font-size: 1.25rem;}
+    h4 {font-size: 1rem;}
+    h5 {font-size: .875rem;}
+    h6 {font-size: .85rem;}
+
+    p, li {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        
+        code {padding: .25rem;}
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr {
+            border-top: 1px solid #c6cbd1;
+            
+            th {text-align: center;}
+            td, th {border: 1px solid #dfe2e5;}
+            &:nth-child(even) {background-color: $markdown-color;}
+        }
+    }
+
+    pre, code:not([class*="language-"]) {
+        overflow: auto;
+        font-size: 85%;
+        line-height: 1.45;
+        background-color: $markdown-color;
+        border-radius: 3px;
+        font-family: "SFMono-Regular", "SF Mono Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+        code {
+            display: flex;
+            padding: .75rem;
+        }
+    }
+
+    blockquote {
+        border-left: 3px solid map-get($light-theme, "light-blue");
+        padding: .15rem 0 .15rem 1rem;
+        margin-left: 1.5rem;
+
+        p {margin: 0; visibility: visible;}
+    }
+
+    input[type="checkbox"] {margin-right: .5rem;}
+    
+    a {
+        border-bottom: 2px solid map-get($light-theme, "light-blue");
+        transition: box-shadow 270ms cubic-bezier(0.77, 0, 0.175, 1);
+
+        &:hover {
+            box-shadow: inset 0 -1.5rem 0 map-get($light-theme, "light-blue");
+            color: inherit;
+        }
+    }
+
+    img {
+        background-color: $placeholder-base;
+    }
+
+    .Main_wrap__260iu {margin: 1rem 0;} // Zoom image wrapper
+}
+
+#additional {
+    margin-top: 5rem;
+    // border-top: 1px solid map-get($light-theme, "gray");
+
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+    
+        .redactor, .share {margin: 0;}
+        .redactor {order: 1;}
+        .share {margin-bottom: 1.5rem; order: 0;}
+    }
+
+    .redactor {
+        flex: 1;
+        &, .avatar {margin-right: 1rem;}
+        .avatar {width: 50px;}
+
+        h4 {line-height: 1.5;}
+        .name {
+            flex: 1;
+            line-height: 1.1rem;
+            
+            p {display: inline-block;}
+        }
+        .twitter {color: #1da1f2; margin-left: .5rem;}
+    }
+
+    .share {
+        flex: 1;
+        margin-left: 1rem;
+
+        .amount {
+            margin-right: 2rem;
+
+            h1 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: map-get($light-theme, "dark-blue");
+                text-shadow: 10px -15px 0px rgba(17, 29, 74, .05);
+                font-family: 'SF Pro Rounded';
+            }
+            
+            p {
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: .025rem;
+                color: map-get($light-theme, "light-blue");
+            }
+        }
+
+        .btn {
+            border: none;
+            padding: 1rem;
+            background-color: map-get($light-theme, "light-blue");
+            flex: 1;
+
+            box-shadow: 0 0 10px rgb(190, 208, 227);
+            transition: .3s box-shadow ease-in-out, transform .05s ease-in-out;
+
+            &:active {
+                box-shadow: 0 0 10px rgba(145, 166, 189, .85);
+                transform: scale(0.99);
+            }
+
+            svg {width: 30px; margin-right: 1rem;}
+            p {margin: 0 auto; font-size: 1.1rem; white-space: nowrap;}
+        }
+    }
+}
+
+.separator {
+    display: inline-block;
+    width: 50px;
+    height: 3px;
+    border-radius: 30px;
+    background-color: map-get($light-theme, "light-blue");
+    margin: .75rem 0;
+    box-shadow: 0 0 8px rgb(190, 208, 227);
+}
+
+/* -== Dark Theme ==- */
+body[dark-theme] {
+    #article-heading {
+        .cover-image {
+            box-shadow: 0 0 10px map-get($dark-theme, "deep-black");
+        }
+
+        .date {
+            color: map-get($dark-theme, "light-gray");
+        }
+
+        .line-separator {
+            background-color: map-get($dark-theme, "gray");
+            box-shadow: 0 0 8px map-get($dark-theme, "deep-black");
+        }
+    }
+
+    #article-content {
+        pre, code:not([class*="language-"]) {
+            background-color: rgba(21, 21, 21, 0.5);
+        }
+
+        hr, blockquote {
+            border-color: map-get($dark-theme, "gray");
+        }
+    }
+}

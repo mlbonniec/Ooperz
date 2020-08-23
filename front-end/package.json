@@ -1,0 +1,62 @@
+{
+  "name": "ooperz",
+  "version": "1.0.0",
+  "description": "Ooperz is a technology news website.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "prod": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlbonniec/ooperz.git"
+  },
+  "keywords": [
+    "developers",
+    "news",
+    "actualities",
+    "mobiles",
+    "technologies",
+    "developements"
+  ],
+  "author": "Mathis Le Bonniec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mlbonniec/ooperz/issues"
+  },
+  "homepage": "https://github.com/mlbonniec/ooperz#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@tippyjs/react": "^4.0.2",
+    "@webdeb/next-styles": "^1.1.0",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "emoji-dictionary": "^1.0.10",
+    "flickity": "^2.2.1",
+    "imagesloaded": "^4.1.4",
+    "moment": "^2.26.0",
+    "next": "^9.4.2",
+    "node-sass": "^4.14.1",
+    "nookies": "^2.3.0",
+    "postcss-cli": "^7.1.1",
+    "react": "^16.13.1",
+    "react-adsense": "^0.1.0",
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
+    "react-medium-image-zoom": "^4.3.0",
+    "scrollreveal": "^4.0.6",
+    "strip-ansi": "^6.0.0",
+    "styled-components": "^5.1.0"
+  },
+  "devDependencies": {
+    "extracted-loader": "^1.0.7",
+    "mini-css-extract-plugin": "^0.9.0"
+  }
+}

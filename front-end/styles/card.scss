@@ -1,0 +1,45 @@
+@import './variables';
+
+.card {
+    width: 170px;
+    height: 250px;
+
+    background-color: $placeholder-base;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+    padding: .75rem;
+    border-radius: .75rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    // box-shadow: 0px 0px 7px rgba(100, 122, 183, .5);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, .95) 15%, transparent 65%);
+        z-index: 1;
+    }
+
+    .title {
+        position: relative;
+        color: map-get($light-theme, "white");
+        margin-bottom: .25rem;
+        line-height: 1.1;
+        z-index: 2;
+    }
+
+    .release {
+        position: relative;
+        font-size: .9rem;
+        color: map-get($light-theme, "gray");
+        display: inline-block;
+        z-index: 2;
+    }
+}

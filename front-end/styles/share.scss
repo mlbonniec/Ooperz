@@ -1,0 +1,88 @@
+@import './variables';
+
+#modal.share .content {
+    max-width: 500px;
+    min-width: 300px;
+    max-height: 90%;
+    width: 50%;
+}
+
+#share {
+    padding: 1rem .5rem;
+    background-color: map-get($light-theme, "white");
+
+    .social-networks {
+        width: 100%;
+        padding: 0 30px;
+
+        .flickity-prev-next-button {
+            background: transparent;
+            border: 0 solid map-get($light-theme, "gray");
+            border-radius: 0;
+            height: 100% !important;
+            width: 30px !important;
+            display: initial !important;
+
+            &:disabled {opacity: 0;}
+
+            &.previous {
+                border-right-width: 1px;
+                left: 0 !important;
+            }
+            &.next {
+                border-left-width: 1px;
+                right: 0 !important;
+            }
+        }
+
+        .btn {
+            padding: .75rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 5px;
+            color: map-get($light-theme, "white");
+
+            i {
+                font-size: 1.5rem;
+                margin: auto;
+            }
+
+            &.twitter {background-color: #1da1f2;}
+            &.facebook {background-color: #4267b2;}
+            &.linkedin {background-color: #2867b2;}
+            &.telegram {background-color: #0088cc;}
+            &.tumblr {background-color: #35465c;}
+            &.mail {background-color: #898c9f;}
+            &.sms {background-color: #34c759;}
+        }
+    }
+
+    .url {
+        width: 100%;
+        padding: 0 .5rem;
+
+        input {
+            flex: 1;
+            padding: .5rem;
+            background: transparent;
+
+            border: 1px solid map-get($light-theme, "light-blue");
+            border-right: none;
+
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        button {
+            padding: .5rem .75rem;
+            background: map-get($light-theme, "light-blue");
+            
+            border: 1px solid map-get($light-theme, "light-blue");
+            border-left: none;
+            
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    }
+}
