@@ -19,7 +19,7 @@ Ooperz contains a front-end, developed with [NextJS](https://github.com/vercel/n
 # Installation
 Type this into your terminal to clone the repository. You will still have to install the node modules and `.env` file. The installation is detailed in the READMEs specified above.
 ```sh
-git clone https://github.com/mlbonniec/ooperz
+$ git clone https://github.com/mlbonniec/ooperz
 ```
 
 # Preview
